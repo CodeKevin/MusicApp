@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="twoCellId" id="gTV-IL-0wX" customClass="SecItemStyle" customModule="MusicApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1674" height="808"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="1674" height="808"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="non-5w-KHV">
+                        <rect key="frame" x="5" y="5" width="1106" height="798"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EhU-tY-VX9">
+                        <rect key="frame" x="1116" y="5" width="553" height="396.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gDV-Ec-eW6">
+                        <rect key="frame" x="1116" y="406.5" width="553" height="396.5"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EhU-tY-VX9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="2gR-FP-ALC"/>
+                <constraint firstAttribute="trailing" secondItem="gDV-Ec-eW6" secondAttribute="trailing" constant="5" id="8SP-KR-mBO"/>
+                <constraint firstAttribute="bottom" secondItem="non-5w-KHV" secondAttribute="bottom" constant="5" id="8Sb-ne-uk2"/>
+                <constraint firstAttribute="bottom" secondItem="gDV-Ec-eW6" secondAttribute="bottom" constant="5" id="HWQ-Ex-70m"/>
+                <constraint firstItem="gDV-Ec-eW6" firstAttribute="top" secondItem="EhU-tY-VX9" secondAttribute="bottom" constant="5" id="Mra-Jl-uyb"/>
+                <constraint firstItem="non-5w-KHV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="QGg-Vu-mIp"/>
+                <constraint firstItem="gDV-Ec-eW6" firstAttribute="width" secondItem="non-5w-KHV" secondAttribute="width" multiplier="0.5" id="bsx-0b-WPw"/>
+                <constraint firstAttribute="trailing" secondItem="EhU-tY-VX9" secondAttribute="trailing" constant="5" id="dKA-eY-Wqs"/>
+                <constraint firstItem="EhU-tY-VX9" firstAttribute="width" secondItem="gDV-Ec-eW6" secondAttribute="width" id="g2O-4O-u3l"/>
+                <constraint firstItem="gDV-Ec-eW6" firstAttribute="leading" secondItem="non-5w-KHV" secondAttribute="trailing" constant="5" id="gIt-ld-pkx"/>
+                <constraint firstItem="EhU-tY-VX9" firstAttribute="height" secondItem="gDV-Ec-eW6" secondAttribute="height" id="loK-fo-bdb"/>
+                <constraint firstItem="non-5w-KHV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="pP3-Re-ROX"/>
+            </constraints>
+            <size key="customSize" width="1674" height="808"/>
+            <connections>
+                <outlet property="firImageView" destination="non-5w-KHV" id="HYd-c1-UYz"/>
+                <outlet property="secImageView" destination="EhU-tY-VX9" id="3rc-9H-EYX"/>
+                <outlet property="thiImageView" destination="gDV-Ec-eW6" id="EFE-Wz-OyD"/>
+            </connections>
+            <point key="canvasLocation" x="690" y="168"/>
+        </collectionViewCell>
+    </objects>
+</document>

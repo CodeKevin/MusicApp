@@ -1,0 +1,37 @@
+//
+//  KVNetworkTool.swift
+//  MusicApp
+//
+//  Created by Kevin on 2017/5/22.
+//  Copyright © 2017年 Kevin. All rights reserved.
+//
+
+import UIKit
+import MJRefresh
+import Alamofire
+import SwiftyJSON
+import MBProgressHUD
+
+class KVNetworkTool: NSObject {
+    static let shareNetworkTool = KVNetworkTool()
+    func loadFirstPage(containerView: UICollectionView, finished:@escaping (_ nowtime: TimeInterval, _ data: JSON)->()) {
+        
+        containerView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            let nowTime = Date().timeIntervalSince1970
+            Alamofire.request("http://wawa.fm:9090/wawa/api.php/index/fmfragment1").validate().responseJSON { (responseData) in
+                
+                containerView.mj_header.endRefreshing()
+                switch responseData.result {
+                case .success:
+                    let json = JSON(responseData.result.value!)
+                    finished(nowTime, json)
+                case .failure(let error):
+                    
+                    print(error)
+                }
+            }
+        })
+        containerView.mj_header.isAutomaticallyChangeAlpha = true
+        containerView.mj_header.beginRefreshing()
+    }
+}

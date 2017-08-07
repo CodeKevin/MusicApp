@@ -1,0 +1,43 @@
+PODS:
+  - Alamofire (4.4.0)
+  - FSPagerView (0.5.2)
+  - Kingfisher (3.8.0)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
+  - ReachabilitySwift (3)
+  - Spring (1.0.3)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - FSPagerView
+  - Kingfisher
+  - MBProgressHUD
+  - MJRefresh
+  - ReachabilitySwift (~> 3)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+  - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 8201b5c93bd7ebdf4cd18160bcde1e6e88c2be64
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  FSPagerView: 922cf37757dceea5069b768c09706a1bf50a0ed8
+  Kingfisher: 7b8a055fc5c2afc61407d1a499e4e0981b1a6ac4
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 6fdfcb8c1d61d81bf9d59b67cf70de15e704b3d9
+
+COCOAPODS: 1.2.1
