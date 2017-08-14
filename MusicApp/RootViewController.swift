@@ -1,22 +1,27 @@
 //
-//  CircleViewController.swift
+//  RootViewController.swift
 //  MusicApp
 //
-//  Created by Kevin on 2017/5/12.
+//  Created by Kevin on 2017/8/11.
 //  Copyright © 2017年 Kevin. All rights reserved.
 //
 
 import UIKit
 
-class CircleViewController: BaseViewController {
+class RootViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.green
-        
-        // Do any additional setup after loading the view    
+        createControllers()
+        self.tabBar.isHidden = true
+        // Do any additional setup after loading the view.
     }
-
+    func createControllers() {
+        let listenNVC = UINavigationController(rootViewController: ListenViewController())
+        let lookNVC = UINavigationController(rootViewController: LookViewController())
+        let circleNVC = UINavigationController(rootViewController: CircleViewController())
+        self.viewControllers = [listenNVC,lookNVC,circleNVC]
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

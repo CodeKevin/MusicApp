@@ -13,6 +13,10 @@ class SecItemStyle: UICollectionViewCell {
     @IBOutlet weak var firImageView: UIImageView!
     @IBOutlet weak var secImageView: UIImageView!
     @IBOutlet weak var thiImageView: UIImageView!
+    @IBOutlet weak var firTitleLabel: UILabel!
+    @IBOutlet weak var firDetailLabel: UILabel!
+    @IBOutlet weak var secTitleLabel: UILabel!
+    @IBOutlet weak var thiTitleLable: UILabel!
     
     @IBAction func thirdAction(_ sender: Any) {
         
@@ -30,15 +34,24 @@ class SecItemStyle: UICollectionViewCell {
             let model = data[0] as! Musician
             let url = URL(string:model.image!)
             firImageView.kf.setImage(with: url)
-
+            firTitleLabel.text = self.separateString(model.title!)
+            firDetailLabel.text = model.title
+            
             let model1 = data[1] as! Musician
             let url1 = URL(string:model1.image!)
             secImageView.kf.setImage(with: url1)
+            secTitleLabel.text = self.separateString(model1.title!)
             
             let model2 = data[2] as! Musician
             let url2 = URL(string:model2.image!)
             thiImageView.kf.setImage(with: url2)
+            thiTitleLable.text = self.separateString(model2.title!)
         }
+    }
+    func separateString(_ string: String) -> String {
+        let arr = string.components(separatedBy: "：")
+        print(arr[0])
+        return arr[0]
     }
     override func awakeFromNib() {
         super.awakeFromNib()

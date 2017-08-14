@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = kLightGrayColor
         networkStatusListener()
         // Do any additional setup after loading the view.
     }

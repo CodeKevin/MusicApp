@@ -12,8 +12,10 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 import Spring
+typealias NavBlock = (()-> UIViewController)
 class ListenViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,FSPagerViewDelegate,FSPagerViewDataSource{
    
+    var navBlock: NavBlock?
     var banner : FSPagerView!
     var collectionView: UICollectionView!
     var adList = [AdModel]()
@@ -23,6 +25,8 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
     var springView = SpringView()
     override  func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 //        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
 //        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
 //        let overlay = overlayClass?.perform(NSSelectorFromString("overlay")).takeUnretainedValue() as? UIWindow
@@ -32,7 +36,6 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
         createBannerView()
         createUI()
         initData()
-        
         springView.animation = "flipX"
         springView.curve = "easeInOut"
         springView.duration = 1.0
@@ -43,7 +46,7 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view.
     }
     func initData() {
-        KVNetworkTool.shareNetworkTool.loadFirstPage(containerView: collectionView) { (time, json) in
+        KVNetworkTool.shared.loadData(urlString: "http://wawa.fm:9090/wawa/api.php/index/fmfragment1",containerView: collectionView) { (time, json) in
    
             self.adList.removeAll()
             self.datasource.removeAll()
@@ -74,13 +77,12 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
             }
             self.collectionView.reloadData()
         }
-        
     }
     
     func createUI()  {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: CGRect(x:0, y:0, width:SCREENW, height:SCREENH-64), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
@@ -88,7 +90,8 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
         collectionView?.register((UINib(nibName: "FirstItemStyle", bundle: nil)), forCellWithReuseIdentifier: "oneCellId")
         collectionView?.register((UINib(nibName: "SecItemStyle", bundle: nil)), forCellWithReuseIdentifier: "twoCellId")
         collectionView?.register((UINib(nibName: "ThirdItemStyle", bundle: nil)), forCellWithReuseIdentifier: "thirdCellId")
-        collectionView?.register(FSPagerView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: "fspagerview")
+        collectionView?.register(UINib(nibName: "SectionHeadView",bundle: nil), forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: "sectionHeadView")
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "sectionFootView")
         collectionView?.dataSource = self
         collectionView?.delegate = self
         springView = SpringView(frame: self.view.bounds)
@@ -130,31 +133,78 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            let sectionView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "sectionHeadView", for: indexPath) as! SectionHeadView
+                    switch indexPath.section {
+                        case 1:
+                            sectionView.sectionTitle.text = "乐人推荐"
+                            sectionView.moreBtn.tag = 1000
+                        case 2:
+                            sectionView.sectionTitle.text = "猎乐合集"
+                            sectionView.moreBtn.tag = 1001
+                        case 3:
+                            sectionView.sectionTitle.text = "达人歌单"
+                            sectionView.moreBtn.tag = 1002
+                        default:
+                            sectionView.sectionTitle.text = ""
+                        }
+            sectionView.moreBtn.addTarget(self, action: #selector(moreClick(sender:)), for:.touchUpInside)
+            sectionView.backgroundColor = UIColor.white
+            return sectionView
+        }else {
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "sectionFootView", for: indexPath)
+            footerView.backgroundColor = kLightGrayColor
+            return footerView
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 3 {
-            return CGSize(width: (SCREENW-15)/2, height: (SCREENW-15)/2)
-        } else if indexPath.section == 2 || indexPath.section == 1 {
-            return CGSize(width: SCREENW-10, height: 200-10)
+            return CGSize(width: (SCREENW-30)/2, height: (SCREENW-30)/2)
+        } else if indexPath.section == 2 {
+            return CGSize(width: SCREENW-10, height: 200-20)
         } else {
-            return CGSize(width: SCREENW-10, height: 200)
+            return CGSize(width: SCREENW-10, height: 150*SCALE)
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: SCREENW, height: 20)
+        return CGSize(width: SCREENW, height: 15)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section > 0 { return CGSize(width: SCREENW, height: 40) } else { return CGSize.zero }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 3 {
-            return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         }else {
             return UIEdgeInsets.zero
         }
     }
-    
+    // MARK: moreClock
+    func moreClick(sender: UIButton) {
+        switch sender.tag - 1000 {
+        case 0:
+            if self.navBlock != nil {
+                self.navBlock!().navigationController?.pushViewController(MusicManViewController(), animated: true)
+            }
+        case 1:
+            if self.navBlock != nil {
+                self.navBlock!().navigationController?.pushViewController(MusicListViewController(), animated: true)
+            }
+        case 2:
+            if self.navBlock != nil {
+                self.navBlock!().navigationController?.pushViewController(FasionListViewController(), animated: true)
+            }
+        default:
+            print("default")
+        }
+    }
     
     
     // MARK: banner
     func createBannerView() {
-        banner = FSPagerView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: 200))
+        banner = FSPagerView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: 150*SCALE))
         banner.backgroundColor = UIColor.white
         banner.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
         banner.dataSource = self

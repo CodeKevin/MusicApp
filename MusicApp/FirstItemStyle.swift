@@ -10,9 +10,13 @@ import UIKit
 
 class FirstItemStyle: UICollectionViewCell {
     @IBOutlet weak var cenImageView: UIImageView!
+    @IBOutlet weak var volLabel: UILabel!
+    @IBOutlet weak var desLabel: UILabel!
 
     func updateWithData(model: AlbumModel) {
         cenImageView.kf.setImage(with: URL(string: model.mphoto!))
+        volLabel.text = "VOL." + model.mnum!
+        desLabel.text = model.mname!
     }
     override func awakeFromNib() {
         super.awakeFromNib()

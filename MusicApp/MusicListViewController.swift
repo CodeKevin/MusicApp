@@ -1,20 +1,19 @@
 //
-//  CircleViewController.swift
+//  MusicListViewController.swift
 //  MusicApp
 //
-//  Created by Kevin on 2017/5/12.
+//  Created by Kevin on 2017/8/9.
 //  Copyright © 2017年 Kevin. All rights reserved.
 //
 
 import UIKit
 
-class CircleViewController: BaseViewController {
+class MusicListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.green
-        
-        // Do any additional setup after loading the view    
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
