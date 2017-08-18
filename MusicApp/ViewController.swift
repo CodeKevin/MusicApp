@@ -9,6 +9,7 @@
 import UIKit
 import FSPagerView
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    static let rootVC = ViewController()
     var mainView: UICollectionView?
     var sliderView: UIView!
     var contentView: UIView!
@@ -39,6 +40,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewWillAppear(animated)
         UIView.animate(withDuration: 0.25) { 
             self.contentView.alpha = 1.0
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.25) {
+            self.contentView.alpha = 0.0
         }
     }
     func createNavItem() {
@@ -89,21 +95,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     func saveCachedVC() {
-//        let listenNVC = UINavigationController(rootViewController: ListenViewController())
-//        self.controllerCache.add(listenNVC)
-//        
-//        let lookNVC = UINavigationController(rootViewController: LookViewController())
-//        self.controllerCache.add(lookNVC)
-//        
-//        let circleNVC = UINavigationController(rootViewController: CircleViewController())
-//        self.controllerCache.add(circleNVC)
         let listenVC = ListenViewController()
-        listenVC.navBlock = {
-            UIView.animate(withDuration: 0.25) {
-                self.contentView.alpha = 0.0
-            }
-            return self
-        }
         self.controllerCache.add(listenVC)
         
         let lookVC = LookViewController()

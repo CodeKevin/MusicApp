@@ -12,10 +12,7 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 import Spring
-typealias NavBlock = (()-> UIViewController)
 class ListenViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,FSPagerViewDelegate,FSPagerViewDataSource{
-   
-    var navBlock: NavBlock?
     var banner : FSPagerView!
     var collectionView: UICollectionView!
     var adList = [AdModel]()
@@ -185,17 +182,11 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
     func moreClick(sender: UIButton) {
         switch sender.tag - 1000 {
         case 0:
-            if self.navBlock != nil {
-                self.navBlock!().navigationController?.pushViewController(MusicManViewController(), animated: true)
-            }
+                ViewController.rootVC.navigationController?.pushViewController(MusicManViewController(), animated: true)
         case 1:
-            if self.navBlock != nil {
-                self.navBlock!().navigationController?.pushViewController(MusicListViewController(), animated: true)
-            }
+                ViewController.rootVC.navigationController?.pushViewController(MusicListViewController(), animated: true)
         case 2:
-            if self.navBlock != nil {
-                self.navBlock!().navigationController?.pushViewController(FasionListViewController(), animated: true)
-            }
+                ViewController.rootVC.navigationController?.pushViewController(FasionListViewController(), animated: true)
         default:
             print("default")
         }

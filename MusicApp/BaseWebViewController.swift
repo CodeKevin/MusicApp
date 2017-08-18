@@ -1,32 +1,27 @@
 //
-//  LookViewController.swift
+//  BaseWebViewController.swift
 //  MusicApp
 //
-//  Created by Kevin on 2017/5/12.
+//  Created by Kevin on 2017/8/18.
 //  Copyright © 2017年 Kevin. All rights reserved.
 //
 
 import UIKit
-class LookViewController: BaseViewController{
-    fileprivate var pageIndexChange: Int = 0
-    var dataSource = ["29","650","653","30"]
-    var titles = ["艺文","有品","旅行","应用"]
-
+import WebKit
+let rect = CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH - 64)
+class BaseWebViewController: UIViewController {
+    var wkWebView: WKWebView!
+    var articleId: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
-        createPageView()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        let configuration = WKWebViewConfiguration()
+        wkWebView = WKWebView(frame: rect, configuration: configuration)
+        let webUrl = URL(string: "http://wawa.fm/webview/content.html?uid=0&id=" + articleId!)
+        let request = URLRequest(url: webUrl!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15.0)
+        wkWebView.load(request)
+        self.view.addSubview(wkWebView)
         // Do any additional setup after loading the view.
-    }
-    func createPageView() {
-        var arr = [UIViewController]()
-        for catId in dataSource {
-            let vc = SubLookViewController()
-            vc.catId = catId
-            arr.append(vc)
-        }
-        let kvContentView = KVBarContentView(frame: rect, titles: titles, childVCs: arr, parentVC: self)
-        self.view.addSubview(kvContentView)
     }
 
     override func didReceiveMemoryWarning() {

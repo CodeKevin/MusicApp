@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class PlayModel: NSObject {
+class PlayModel: BaseModel {
 
     var id: String?
     var playlist_image: String?
@@ -24,17 +24,6 @@ class PlayModel: NSObject {
     
     init(dict: [String: AnyObject]) {
         super.init()
-        id = dict["id"] as? String
-        playlist_image = dict["playlist_image"] as? String
-        playlist_small_image = dict["playlist_small_image"] as? String
-        pimg = dict["pimg"] as? String
-        username = dict["username"] as? String
-        uid = dict["uid"] as? String
-        playlist = dict["playlist"] as? String
-        playlist_name = dict["playlist_name"] as? String
-        status = dict["status"] as? String
-        create_date = dict["create_date"] as? String
-        desc = dict["desc"] as? String
-        play_count = dict["play_count"] as? String
+        setValuesForKeys(dict)
     }
 }

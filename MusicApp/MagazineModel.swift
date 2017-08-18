@@ -1,23 +1,20 @@
 //
-//  AlbumModel.swift
+//  MagazineModel.swift
 //  MusicApp
 //
-//  Created by Kevin on 2017/5/19.
+//  Created by Kevin on 2017/8/18.
 //  Copyright © 2017年 Kevin. All rights reserved.
 //
 
 import UIKit
 
-class AlbumModel: BaseModel {
+class MagazineModel: BaseModel {
     var mid: String?
-    var mcode: String?
-    var resourcecode: String?
-    var mnum: String?
     var mname: String?
-    var mdesc: String?
-    var mphoto: String?
     var play_count: String?
-    
+    var mnum: String?
+    var thumbnail_url: String?
+    var tracks: [TracksModel]?
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdModel: NSObject {
+class AdModel: BaseModel {
     var id: String?
     var image: String?
     var flag: String?
@@ -17,11 +17,7 @@ class AdModel: NSObject {
     
     init(dict: [String: AnyObject]) {
         super.init()
-        id = dict["id"] as? String
-        image = dict["image"] as? String
-        flag = dict["flag"] as? String
-        link = dict["link"] as? String
-        create_date = dict["create_date"] as? String
+        setValuesForKeys(dict)
     }
 
 }

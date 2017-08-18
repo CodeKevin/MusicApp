@@ -24,7 +24,7 @@ let isIPhone6 = SCREENH == 667 ? true : false
 /// iPhone 6P
 let isIPhone6P = SCREENH == 736 ? true : false
 /// randColor
-let randColor = UIColor(red:CGFloat(Double(arc4random()%256)/255.0) , green: CGFloat(Double(arc4random()%254)/255.0), blue: CGFloat(Double(arc4random()%254)/255.0), alpha: 1.0)
+let randColor = UIColor(red:CGFloat(Double(arc4random()%256)/255.0) , green: CGFloat(Double(arc4random()%256)/255.0), blue: CGFloat(Double(arc4random()%256)/255.0), alpha: 1.0)
 /// backgroudColor
 let kLightGrayColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1)
 /// scale

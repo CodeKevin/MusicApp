@@ -8,21 +8,14 @@
 
 import UIKit
 
-class Musician: NSObject {
+class Musician: BaseModel {
     var title: String?
-    //var description: String?
     var id: String?
     var image : String?
     var musiccode: String?
     
     init(dict: [String: AnyObject]) {
         super.init()
-        title = dict["title"] as? String
-        id = dict["id"] as? String
-        image = dict["image"] as? String
-        musiccode = dict["musiccode"] as? String
+        setValuesForKeys(dict)
     }
 }
-
-
-//

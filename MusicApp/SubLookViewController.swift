@@ -11,9 +11,10 @@ import UIKit
 class SubLookViewController: BaseViewController,UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     var collectionView: UICollectionView!
     var dataSource = [LookModel]()
+    var catId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = randColor
+        self.view.backgroundColor = kLightGrayColor
         createCollectionView()
         initData()
         // Do any additional setup after loading the view.
@@ -23,7 +24,7 @@ class SubLookViewController: BaseViewController,UICollectionViewDataSource,UICol
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.scrollDirection = .vertical
-        collectionView = UICollectionView(frame: CGRect(x:0, y:0, width:SCREENW, height:SCREENH-64-44), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x:0, y:0, width:SCREENW, height:SCREENH-64-40), collectionViewLayout: layout)
         collectionView.backgroundColor = kLightGrayColor
         collectionView?.register((UINib(nibName: "LookCell", bundle: nil)), forCellWithReuseIdentifier: "lookcellid")
         collectionView?.dataSource = self
@@ -32,7 +33,8 @@ class SubLookViewController: BaseViewController,UICollectionViewDataSource,UICol
     }
     func initData() {
         self.dataSource.removeAll()
-        KVNetworkTool.shared.loadData(urlString: "http://wawa.fm:9090/wawa/api.php/document/getDocumentByCategory", containerView: collectionView) { (time, json) in
+        let urlStr = "http://wawa.fm:9090/wawa/api.php/document/getDocumentByCategory?&r=10&cid=" + catId!
+        KVNetworkTool.shared.loadData(urlString: urlStr, containerView: collectionView) { (time, json) in
             if let data = json.arrayObject {
                 for dict in data {
                     let model = LookModel(dict: dict as! [String : AnyObject])
@@ -68,6 +70,13 @@ class SubLookViewController: BaseViewController,UICollectionViewDataSource,UICol
             cell.transform = .identity
             cell.alpha = 1.0
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let articleVC = BaseWebViewController()
+        let model = self.dataSource[indexPath.row]
+        articleVC.title = model.title
+        articleVC.articleId = model.id
+        ViewController.rootVC.navigationController?.pushViewController(articleVC, animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

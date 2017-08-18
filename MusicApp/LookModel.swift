@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LookModel: NSObject {
+class LookModel: BaseModel {
     var id: String?
     var title: String?
     var uid: String?
@@ -21,14 +21,6 @@ class LookModel: NSObject {
     
     init(dict: [String: AnyObject]) {
         super.init()
-        id = dict["id"] as? String
-        title = dict["title"] as? String
-        uid = dict["uid"] as? String
-        category_id = dict["category_id"] as? String
-        //description = dict["description"] as? String
-        cover_url = dict["cover_url"] as? String
-        type = dict["type"] as? String
-        member_name = dict["member_name"] as? String
-        category_name = dict["category_name"] as? String
+        setValuesForKeys(dict)
     }
 }

@@ -32,18 +32,18 @@ class KVNetworkTool: NSObject {
         containerView.mj_header.isAutomaticallyChangeAlpha = true
         containerView.mj_header.beginRefreshing()
     }
-    func loadData(urlString: String, finished:@escaping (_ nowtime: TimeInterval, _ data: JSON)->()) {
-
-            let nowTime = Date().timeIntervalSince1970
-            Alamofire.request(urlString).validate().responseJSON { (responseData) in
-                switch responseData.result {
-                case .success:
-                    let json = JSON(responseData.result.value!)
-                    finished(nowTime, json)
-                    print(json)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-    }
+//    func loadData(urlString: String, finished:@escaping (_ nowtime: TimeInterval, _ data: JSON)->()) {
+//
+//            let nowTime = Date().timeIntervalSince1970
+//            Alamofire.request(urlString).validate().responseJSON { (responseData) in
+//                switch responseData.result {
+//                case .success:
+//                    let json = JSON(responseData.result.value!)
+//                    finished(nowTime, json)
+//                    print(json)
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//    }
 }
