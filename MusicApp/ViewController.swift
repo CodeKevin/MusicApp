@@ -88,7 +88,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.sliderAnimation(Int(x / SCREENW))
     }
     func sliderAnimation(_ index: Int) {
-        print(index)
         let width = (SCREENW-140)/3.0
         UIView.animate(withDuration: 0.25) {
             self.sliderView.center.x = CGFloat(index) * width + width / 2

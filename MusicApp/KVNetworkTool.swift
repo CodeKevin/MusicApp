@@ -23,7 +23,6 @@ class KVNetworkTool: NSObject {
                 case .success:
                     let json = JSON(responseData.result.value!)
                     finished(nowTime, json)
-                    print(json)
                 case .failure(let error):
                     print(error)
                 }

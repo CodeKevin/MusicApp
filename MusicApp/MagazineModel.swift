@@ -13,10 +13,24 @@ class MagazineModel: BaseModel {
     var mname: String?
     var play_count: String?
     var mnum: String?
-    var thumbnail_url: String?
+    var mphoto: String?
+    var mdesc: String?
     var tracks: [TracksModel]?
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)
+    }
+    override func setValue(_ value: Any?, forKey key: String) {
+        if key == "tracks" {
+            var modelArr = [TracksModel]()
+            let arr = value as! [Any]
+            for dic in arr {
+                let model = TracksModel(dict: dic as! [String : AnyObject])
+                modelArr.append(model)
+            }
+            tracks = modelArr
+            return
+        }
+        super.setValue(value, forKey: key)
     }
 }

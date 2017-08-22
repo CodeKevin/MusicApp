@@ -18,6 +18,13 @@
 		0A6DA9A61F41746400BE7A93 /* LookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DA9A51F41746400BE7A93 /* LookModel.swift */; };
 		0A6DA9A91F4186B400BE7A93 /* LookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DA9A71F4186B400BE7A93 /* LookCell.swift */; };
 		0A6DA9AA1F4186B400BE7A93 /* LookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6DA9A81F4186B400BE7A93 /* LookCell.xib */; };
+		0A77A5211F4A7D5F00DC62B4 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77A5201F4A7D5F00DC62B4 /* SectionCell.swift */; };
+		0A77A5241F4AAC1900DC62B4 /* MagazineDesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77A5221F4AAC1900DC62B4 /* MagazineDesCell.swift */; };
+		0A77A5251F4AAC1900DC62B4 /* MagazineDesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A77A5231F4AAC1900DC62B4 /* MagazineDesCell.xib */; };
+		0A77A5281F4AAC3300DC62B4 /* MagazineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77A5261F4AAC3300DC62B4 /* MagazineListCell.swift */; };
+		0A77A5291F4AAC3300DC62B4 /* MagazineListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A77A5271F4AAC3300DC62B4 /* MagazineListCell.xib */; };
+		0AA711471F4C1BA6000DE471 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA711451F4C1BA6000DE471 /* PlayerViewController.swift */; };
+		0AA711481F4C1BA6000DE471 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA711461F4C1BA6000DE471 /* PlayerViewController.xib */; };
 		0AAD671D1EE4F74400C73FE8 /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAD671C1EE4F74400C73FE8 /* Spring.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0ACC92B21F46754900AF61B7 /* KVBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC92AF1F46754900AF61B7 /* KVBarContentView.swift */; };
 		0ACC92B31F46754900AF61B7 /* KVBarTitleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC92B01F46754900AF61B7 /* KVBarTitleItem.swift */; };
@@ -75,6 +82,13 @@
 		0A6DA9A51F41746400BE7A93 /* LookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookModel.swift; sourceTree = "<group>"; };
 		0A6DA9A71F4186B400BE7A93 /* LookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookCell.swift; sourceTree = "<group>"; };
 		0A6DA9A81F4186B400BE7A93 /* LookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LookCell.xib; sourceTree = "<group>"; };
+		0A77A5201F4A7D5F00DC62B4 /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		0A77A5221F4AAC1900DC62B4 /* MagazineDesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineDesCell.swift; sourceTree = "<group>"; };
+		0A77A5231F4AAC1900DC62B4 /* MagazineDesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MagazineDesCell.xib; sourceTree = "<group>"; };
+		0A77A5261F4AAC3300DC62B4 /* MagazineListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineListCell.swift; sourceTree = "<group>"; };
+		0A77A5271F4AAC3300DC62B4 /* MagazineListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MagazineListCell.xib; sourceTree = "<group>"; };
+		0AA711451F4C1BA6000DE471 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		0AA711461F4C1BA6000DE471 /* PlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		0AAD671C1EE4F74400C73FE8 /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = "../../../Library/Developer/Xcode/DerivedData/MusicApp-emhucrsqqnhcoqglktafpvpafzza/Build/Products/Debug-iphoneos/Spring/Spring.framework"; sourceTree = "<group>"; };
 		0ACC92AF1F46754900AF61B7 /* KVBarContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBarContentView.swift; sourceTree = "<group>"; };
 		0ACC92B01F46754900AF61B7 /* KVBarTitleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVBarTitleItem.swift; sourceTree = "<group>"; };
@@ -256,6 +270,8 @@
 				0AF8C7A71F3AB00400BB6CDC /* MusicManViewController.swift */,
 				0AF8C7A91F3AB04500BB6CDC /* MusicListViewController.swift */,
 				0AF8C7AB1F3AB08D00BB6CDC /* FasionListViewController.swift */,
+				0AA711451F4C1BA6000DE471 /* PlayerViewController.swift */,
+				0AA711461F4C1BA6000DE471 /* PlayerViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -289,6 +305,11 @@
 				0A4E3CD91F39560400299BA8 /* SectionHeadView.xib */,
 				0ACC92B71F46C11600AF61B7 /* MoreManCell.swift */,
 				0ACC92B81F46C11600AF61B7 /* MoreManCell.xib */,
+				0A77A5201F4A7D5F00DC62B4 /* SectionCell.swift */,
+				0A77A5221F4AAC1900DC62B4 /* MagazineDesCell.swift */,
+				0A77A5231F4AAC1900DC62B4 /* MagazineDesCell.xib */,
+				0A77A5261F4AAC3300DC62B4 /* MagazineListCell.swift */,
+				0A77A5271F4AAC3300DC62B4 /* MagazineListCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -431,10 +452,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A77A5251F4AAC1900DC62B4 /* MagazineDesCell.xib in Resources */,
 				0AFA474E1EC5B4BC003ECCAE /* SecItemStyle.xib in Resources */,
 				0AFA47521EC5B4EA003ECCAE /* ThirdItemStyle.xib in Resources */,
 				0AFA474A1EC5B49B003ECCAE /* FirstItemStyle.xib in Resources */,
 				B9903F471EC5585900652B1D /* LaunchScreen.storyboard in Resources */,
+				0AA711481F4C1BA6000DE471 /* PlayerViewController.xib in Resources */,
+				0A77A5291F4AAC3300DC62B4 /* MagazineListCell.xib in Resources */,
 				0ACC92BA1F46C11600AF61B7 /* MoreManCell.xib in Resources */,
 				0AFA47461EC5B208003ECCAE /* ListenItem.xib in Resources */,
 				B9903F441EC5585900652B1D /* Assets.xcassets in Resources */,
@@ -502,10 +526,12 @@
 				0AFA473F1EC58CDB003ECCAE /* CircleViewController.swift in Sources */,
 				0AF8C7A81F3AB00400BB6CDC /* MusicManViewController.swift in Sources */,
 				0ACC92BE1F46CC3A00AF61B7 /* Tool.swift in Sources */,
+				0A77A5241F4AAC1900DC62B4 /* MagazineDesCell.swift in Sources */,
 				0AFA47451EC5B208003ECCAE /* ListenItem.swift in Sources */,
 				0AF0F5ED1ECEB4B4000D4D85 /* Musician.swift in Sources */,
 				0AFA474D1EC5B4BC003ECCAE /* SecItemStyle.swift in Sources */,
 				0AFA47511EC5B4EA003ECCAE /* ThirdItemStyle.swift in Sources */,
+				0AA711471F4C1BA6000DE471 /* PlayerViewController.swift in Sources */,
 				B9903F3F1EC5585900652B1D /* ViewController.swift in Sources */,
 				0ACC92C21F46E01800AF61B7 /* MagazineModel.swift in Sources */,
 				0AFA47491EC5B49B003ECCAE /* FirstItemStyle.swift in Sources */,
@@ -523,6 +549,7 @@
 				0A5067561F3D403E00A99BE6 /* MusicTabBar.swift in Sources */,
 				0AFA472A1EC58275003ECCAE /* KVConst.swift in Sources */,
 				0A6DA9A91F4186B400BE7A93 /* LookCell.swift in Sources */,
+				0A77A5211F4A7D5F00DC62B4 /* SectionCell.swift in Sources */,
 				0ACC92C41F46E17900AF61B7 /* TracksModel.swift in Sources */,
 				0A5067541F3D3F9100A99BE6 /* RootViewController.swift in Sources */,
 				0AFA473B1EC58C2B003ECCAE /* ListenViewController.swift in Sources */,
@@ -530,6 +557,7 @@
 				0A50675D1F3DB70700A99BE6 /* SubLookViewController.swift in Sources */,
 				0ACC92C01F46DDE200AF61B7 /* BaseModel.swift in Sources */,
 				B9903F3D1EC5585900652B1D /* AppDelegate.swift in Sources */,
+				0A77A5281F4AAC3300DC62B4 /* MagazineListCell.swift in Sources */,
 				0AF8C7AA1F3AB04500BB6CDC /* MusicListViewController.swift in Sources */,
 				0AF0F5F71ED278BA000D4D85 /* BaseViewController.swift in Sources */,
 				0AF0F5F11ECEDC96000D4D85 /* PlayModel.swift in Sources */,
