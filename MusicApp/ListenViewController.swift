@@ -178,6 +178,11 @@ class ListenViewController: BaseViewController, UICollectionViewDelegate, UIColl
             return UIEdgeInsets.zero
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            ViewController.rootVC.navigationController?.pushViewController(MusicListViewController(), animated: true)
+        }
+    }
     // MARK: moreClock
     func moreClick(sender: UIButton) {
         switch sender.tag - 1000 {

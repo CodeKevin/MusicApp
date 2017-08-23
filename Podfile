@@ -3,7 +3,7 @@ use_frameworks!
 
 target ‘MusicApp’ do
     
-    pod  'FSPagerView'
+    pod 'FSPagerView'
 	pod 'Alamofire', '~> 4.4'
 	pod 'Kingfisher'
 	pod 'SwiftyJSON'
@@ -11,6 +11,7 @@ target ‘MusicApp’ do
 	pod 'ReachabilitySwift', '~> 3'
 	pod 'MBProgressHUD'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+    pod 'KDEAudioPlayer'
 end
 post_install do |installer|
     installer.pods_project.targets.each do |target|

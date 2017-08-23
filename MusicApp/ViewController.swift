@@ -34,6 +34,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         mainView?.bounces = false
         self.view.addSubview(mainView!)
         createNavItem()
+        createPlayerBtn()
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +47,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         UIView.animate(withDuration: 0.25) {
             self.contentView.alpha = 0.0
         }
+    }
+    func createPlayerBtn() {
+        let playBtn = UIButton(type: .custom)
+        playBtn.frame = CGRect(x: 20, y: SCREENH - 64 - 44 - 20 , width: 44 , height: 44)
+        playBtn.backgroundColor = UIColor.red
+        playBtn.layer.cornerRadius = 22.0
+       // playBtn.clipsToBounds = true
+        playBtn.addTarget(self, action: #selector(showPlayerVC), for: .touchUpInside)
+        playBtn.layer.shadowOpacity = 0.5
+        playBtn.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
+        playBtn.layer.shadowRadius = 0.5
+        self.view.addSubview(playBtn)
+    }
+    func showPlayerVC() {
+        self.present(PlayerViewController.shared, animated: true, completion: nil)
     }
     func createNavItem() {
         contentView = UIView(frame: CGRect(x: 70, y: 0, width: SCREENW-140, height: 44))

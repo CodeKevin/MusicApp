@@ -11,7 +11,6 @@ let SECTIONCELL_ID = "sectionid"
 let DESCELL_ID = "descellid"
 let LISTCELL_ID = "listcellid"
 class MusicListViewController: BaseViewController {
-
     var tableView: UITableView!
     var dataSource = [MagazineModel]()
     var statusList = [Bool]()
@@ -49,7 +48,12 @@ class MusicListViewController: BaseViewController {
 }
 extension MusicListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.row >= 1 {
+            let magazineModel = self.dataSource[indexPath.section]
+            self.present(PlayerViewController.shared, animated: true, completion: { 
+                PlayerViewController.shared.playMusicWith(magazineModel.tracks!, indexPath.row - 1)
+            })
+        }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.transform = cell.transform.scaledBy(x: 0.8, y: 0.8)
@@ -97,7 +101,7 @@ extension MusicListViewController: UITableViewDataSource {
                 }else {
                     sself.statusList[section] = true
                 }
-                sself.tableView.reloadSections(IndexSet([section]), with: .fade)
+                sself.tableView.reloadSections(IndexSet([section]), with: .automatic)
             }
         }
         sectionCell?.updataWithModel(self.dataSource[section])

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0AF5D81F4D1A000023E383 /* KDEAudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0AF5D71F4D1A000023E383 /* KDEAudioPlayer.framework */; };
 		0A129D331ED28F2200588B3E /* KVNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A129D321ED28F2200588B3E /* KVNetworkTool.swift */; };
 		0A129D351ED2914F00588B3E /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A129D341ED2914F00588B3E /* MJRefresh.framework */; };
 		0A129D371ED2B8CA00588B3E /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A129D361ED2B8CA00588B3E /* MBProgressHUD.framework */; };
@@ -71,6 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0AF5D71F4D1A000023E383 /* KDEAudioPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KDEAudioPlayer.framework; path = "../../../Library/Developer/Xcode/DerivedData/MusicApp-emhucrsqqnhcoqglktafpvpafzza/Build/Products/Debug-iphoneos/KDEAudioPlayer/KDEAudioPlayer.framework"; sourceTree = "<group>"; };
 		0A129D321ED28F2200588B3E /* KVNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVNetworkTool.swift; sourceTree = "<group>"; };
 		0A129D341ED2914F00588B3E /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "Pods/../build/Debug-iphoneos/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		0A129D361ED2B8CA00588B3E /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0AF5D81F4D1A000023E383 /* KDEAudioPlayer.framework in Frameworks */,
 				0AAD671D1EE4F74400C73FE8 /* Spring.framework in Frameworks */,
 				0A129D371ED2B8CA00588B3E /* MBProgressHUD.framework in Frameworks */,
 				0A129D351ED2914F00588B3E /* MJRefresh.framework in Frameworks */,
@@ -325,6 +328,7 @@
 		40699E2F5515CC165FFEA21C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A0AF5D71F4D1A000023E383 /* KDEAudioPlayer.framework */,
 				0AAD671C1EE4F74400C73FE8 /* Spring.framework */,
 				0A129D361ED2B8CA00588B3E /* MBProgressHUD.framework */,
 				0A129D341ED2914F00588B3E /* MJRefresh.framework */,
