@@ -93,7 +93,11 @@ class PlayerViewController: BaseViewController {
             
         }
     }
-    
+    @IBAction func showListView(_ sender: Any) {
+        let backView = BackView(frame: self.view.bounds, list: self.dataSource, index: currentIndex)
+        self.view.addSubview(backView)
+        backView.showList()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -115,8 +119,10 @@ extension PlayerViewController: AudioPlayerDelegate {
     func audioPlayer(_ audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, to state: AudioPlayerState) {
         if state == .playing || state == .buffering {
             pauseBtn.setImage(UIImage(named: "cm2_vehicle_btn_pause_prs"), for: .normal)
+            continueAnimation()
         }else {
             pauseBtn.setImage(UIImage(named: "cm2_vehicle_btn_play_prs"), for: .normal)
+            stopAnimation()
         }
     }
     func audioPlayer(_ audioPlayer: AudioPlayer, willStartPlaying item: AudioItem) {

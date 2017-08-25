@@ -11,6 +11,10 @@
 		0A129D331ED28F2200588B3E /* KVNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A129D321ED28F2200588B3E /* KVNetworkTool.swift */; };
 		0A129D351ED2914F00588B3E /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A129D341ED2914F00588B3E /* MJRefresh.framework */; };
 		0A129D371ED2B8CA00588B3E /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A129D361ED2B8CA00588B3E /* MBProgressHUD.framework */; };
+		0A1B74F51F4E70EF001C91F4 /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B74F41F4E70EF001C91F4 /* SongListView.swift */; };
+		0A1B74F91F4E72EB001C91F4 /* BackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B74F81F4E72EB001C91F4 /* BackView.swift */; };
+		0A1B74FC1F4E7493001C91F4 /* SongListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B74FA1F4E7493001C91F4 /* SongListCell.swift */; };
+		0A1B74FD1F4E7493001C91F4 /* SongListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1B74FB1F4E7493001C91F4 /* SongListCell.xib */; };
 		0A4E3CDA1F39560400299BA8 /* SectionHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E3CD81F39560400299BA8 /* SectionHeadView.swift */; };
 		0A4E3CDB1F39560400299BA8 /* SectionHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E3CD91F39560400299BA8 /* SectionHeadView.xib */; };
 		0A5067541F3D3F9100A99BE6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5067531F3D3F9100A99BE6 /* RootViewController.swift */; };
@@ -76,6 +80,10 @@
 		0A129D321ED28F2200588B3E /* KVNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVNetworkTool.swift; sourceTree = "<group>"; };
 		0A129D341ED2914F00588B3E /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "Pods/../build/Debug-iphoneos/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		0A129D361ED2B8CA00588B3E /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
+		0A1B74F41F4E70EF001C91F4 /* SongListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		0A1B74F81F4E72EB001C91F4 /* BackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackView.swift; sourceTree = "<group>"; };
+		0A1B74FA1F4E7493001C91F4 /* SongListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListCell.swift; sourceTree = "<group>"; };
+		0A1B74FB1F4E7493001C91F4 /* SongListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListCell.xib; sourceTree = "<group>"; };
 		0A4E3CD81F39560400299BA8 /* SectionHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeadView.swift; sourceTree = "<group>"; };
 		0A4E3CD91F39560400299BA8 /* SectionHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeadView.xib; sourceTree = "<group>"; };
 		0A5067531F3D3F9100A99BE6 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +321,10 @@
 				0A77A5231F4AAC1900DC62B4 /* MagazineDesCell.xib */,
 				0A77A5261F4AAC3300DC62B4 /* MagazineListCell.swift */,
 				0A77A5271F4AAC3300DC62B4 /* MagazineListCell.xib */,
+				0A1B74F41F4E70EF001C91F4 /* SongListView.swift */,
+				0A1B74F81F4E72EB001C91F4 /* BackView.swift */,
+				0A1B74FA1F4E7493001C91F4 /* SongListCell.swift */,
+				0A1B74FB1F4E7493001C91F4 /* SongListCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -466,6 +478,7 @@
 				0ACC92BA1F46C11600AF61B7 /* MoreManCell.xib in Resources */,
 				0AFA47461EC5B208003ECCAE /* ListenItem.xib in Resources */,
 				B9903F441EC5585900652B1D /* Assets.xcassets in Resources */,
+				0A1B74FD1F4E7493001C91F4 /* SongListCell.xib in Resources */,
 				0A6DA9AA1F4186B400BE7A93 /* LookCell.xib in Resources */,
 				0A4E3CDB1F39560400299BA8 /* SectionHeadView.xib in Resources */,
 			);
@@ -540,6 +553,7 @@
 				0ACC92C21F46E01800AF61B7 /* MagazineModel.swift in Sources */,
 				0AFA47491EC5B49B003ECCAE /* FirstItemStyle.swift in Sources */,
 				0ACC92B21F46754900AF61B7 /* KVBarContentView.swift in Sources */,
+				0A1B74FC1F4E7493001C91F4 /* SongListCell.swift in Sources */,
 				0A6DA9A61F41746400BE7A93 /* LookModel.swift in Sources */,
 				0ACC92B91F46C11600AF61B7 /* MoreManCell.swift in Sources */,
 				0ACC92B31F46754900AF61B7 /* KVBarTitleItem.swift in Sources */,
@@ -553,9 +567,11 @@
 				0A5067561F3D403E00A99BE6 /* MusicTabBar.swift in Sources */,
 				0AFA472A1EC58275003ECCAE /* KVConst.swift in Sources */,
 				0A6DA9A91F4186B400BE7A93 /* LookCell.swift in Sources */,
+				0A1B74F91F4E72EB001C91F4 /* BackView.swift in Sources */,
 				0A77A5211F4A7D5F00DC62B4 /* SectionCell.swift in Sources */,
 				0ACC92C41F46E17900AF61B7 /* TracksModel.swift in Sources */,
 				0A5067541F3D3F9100A99BE6 /* RootViewController.swift in Sources */,
+				0A1B74F51F4E70EF001C91F4 /* SongListView.swift in Sources */,
 				0AFA473B1EC58C2B003ECCAE /* ListenViewController.swift in Sources */,
 				0A129D331ED28F2200588B3E /* KVNetworkTool.swift in Sources */,
 				0A50675D1F3DB70700A99BE6 /* SubLookViewController.swift in Sources */,
